@@ -1,0 +1,7 @@
+MKSHELL="/bin/bash"
+
+#target:Q: prereq
+#Pass args to R
+%.png:Q: %.changes.tsv
+	echo "[DEBUG] Writing dataframe"
+	Rscript --vanilla plot-target-changes.R $prereq $target

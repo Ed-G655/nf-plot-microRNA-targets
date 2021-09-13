@@ -1,0 +1,8 @@
+MKSHELL="/bin/bash"
+
+#target:Q: prereq
+#Pass args to R
+
+%.changes:Q: %.ref %.mut
+	echo "[DEBUG] Writing dataframe"
+	Rscript --vanilla Compare_mutate_targets.R $prereq $target

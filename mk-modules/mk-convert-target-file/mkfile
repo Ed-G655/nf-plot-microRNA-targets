@@ -1,0 +1,10 @@
+MKSHELL="/bin/bash"
+
+#target:Q: prereq
+#Pass args to R
+
+%.changes.tsv:Q: %.changes
+	echo "[DEBUG] Writing dataframe"
+	sed "1d" $prereq \
+	| sed "1 i\Gen_ID\tmiRbase_ID\tUTR_start\tUTR_end\tSite_type\ttarget_change" \
+	| tr ";" "\t" > $target

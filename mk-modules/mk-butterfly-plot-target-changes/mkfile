@@ -1,0 +1,7 @@
+MKSHELL="/bin/bash"
+
+#target:Q: prereq
+#Pass args to R
+%.png:Q: %.changes.tsv
+	echo "[DEBUG] Ploting data"
+	Rscript --vanilla plot-targe-changes-butterfly.R $prereq $target
